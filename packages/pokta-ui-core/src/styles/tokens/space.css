@@ -1,0 +1,10 @@
+:root {
+  --pk-space-xxs: 0.125rem;
+  --pk-space-xs: 0.25rem;
+  --pk-space-sm: 0.5rem;
+  --pk-space-md: 1rem;
+  --pk-space-lg: 1.5rem;
+  --pk-space-xl: 2rem;
+  --pk-space-xxl: 3rem;
+  --pk-space-xxxl: 4rem;
+}

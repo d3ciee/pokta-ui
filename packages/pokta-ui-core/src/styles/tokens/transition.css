@@ -1,0 +1,6 @@
+:root {
+  --transition-time-blazingly-fast: 0.1s;
+  --transition-time-fast: 0.2s;
+  --transition-time-medium: 0.3s;
+  --transition-time-slow: 0.5s;
+}

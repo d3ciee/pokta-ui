@@ -1,0 +1,10 @@
+:root {
+  --pk-size-xxs: 0.25rem;
+  --pk-size-xs: 0.5rem;
+  --pk-size-sm: 0.75rem;
+  --pk-size-md: 1rem;
+  --pk-size-lg: 1.5rem;
+  --pk-size-xl: 2rem;
+  --pk-size-xxl: 3rem;
+  --pk-size-xxxl: 4rem;
+}

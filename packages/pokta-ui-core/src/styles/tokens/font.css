@@ -1,0 +1,23 @@
+:root {
+  /* Font font-sizes */
+  --pk-font-size-xs: 0.75rem;
+  --pk-font-size-sm: 0.875rem;
+  --pk-font-size-md: 1rem;
+  --pk-font-size-lg: 1.125rem;
+  --pk-font-size-xl: 1.25rem;
+  --pk-font-size-xxl: 1.5rem;
+  --pk-font-size-xxxl: 2rem;
+
+  /* Font weights */
+  --pk-font-weight-light: 300;
+  --pk-font-weight-normal: 500;
+  --pk-font-weight-bold: 700;
+
+  /* Line heights */
+  --pk-line-height-xs: 1.2;
+  --pk-line-height-sm: 1.3;
+  --pk-line-height-md: 1.4;
+  --pk-line-height-lg: 1.5;
+
+  --pk-font-family: Inter;
+}
