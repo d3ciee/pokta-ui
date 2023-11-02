@@ -4,6 +4,8 @@
     color: PoktaUIColor;
     size: 'sm' | 'md' | 'lg';
     rounded: 'default' | 'full' | 'none';
+    loading: boolean;
+    disabled: boolean;
   }
 </script>
 
@@ -12,6 +14,8 @@
   import generateButtonVars from './Button.styles';
 
   export let size: ButtonProps['size'] = 'md';
+  export let loading: ButtonProps['loading'] = false;
+  export let disabled: ButtonProps['disabled'] = false;
   export let rounded: ButtonProps['rounded'] = 'default';
   export let variant: ButtonProps['variant'] = 'fill';
   export let color: ButtonProps['color'] = 'emerald';
@@ -19,7 +23,7 @@
   $: styles = generateButtonVars({ size, rounded, variant, color });
 </script>
 
-<button on:click style={styles} class={'button'}><slot /></button>
+<button {disabled} on:click style={styles} class={'button'}><slot /></button>
 
 <style>
   .button {

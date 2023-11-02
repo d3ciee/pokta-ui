@@ -8,15 +8,51 @@ const buttonStyles: Record<keyof ButtonProps, any> = {
       border: '1px solid transparent',
       boxShadow: '0',
       hover: {
+        color: 'var(--button--color-500)',
+        background: 'var(--button--color-50)',
+        border: '1px solid var(--button--color-50)',
+        boxShadow: '0'
+      },
+      active: {
         color: 'var(--button--color-600)',
+        background: 'var(--button--color-100)',
+        border: '1px solid var(--button--color-100)',
+        boxShadow: '0'
+      }
+    },
+    soft: {
+      color: 'var(--button--color-500)',
+      background: 'var(--button--color-50)',
+      border: '1px solid var(--button--color-50)',
+      boxShadow: '0',
+      hover: {
+        color: 'var(--button--color-500)',
         background: 'var(--button--color-100)',
         border: '1px solid var(--button--color-100)',
         boxShadow: '0'
       },
       active: {
-        color: 'var(--button--color-700)',
+        color: 'var(--button--color-500)',
         background: 'var(--button--color-200)',
         border: '1px solid var(--button--color-200)',
+        boxShadow: '0'
+      }
+    },
+    outline: {
+      color: 'var(--button--color-500)',
+      background: 'transparent',
+      border: '1px solid var(--button--color-500)',
+      boxShadow: '0',
+      hover: {
+        color: 'var(--button--color-500)',
+        background: 'var(--button--color-50)',
+        border: '1px solid var(--button--color-500)',
+        boxShadow: '0'
+      },
+      active: {
+        color: 'var(--button--color-500)',
+        background: 'var(--button--color-100)',
+        border: '1px solid var(--button--color-500)',
         boxShadow: '0'
       }
     },
@@ -36,42 +72,6 @@ const buttonStyles: Record<keyof ButtonProps, any> = {
         background: 'var(--button--color-700)',
         border: '1px solid var(--button--color-700)',
         boxShadow: 'var(--pk-box-shadow-sm)'
-      }
-    },
-    outline: {
-      color: 'var(--button--color-600)',
-      background: 'transparent',
-      border: '1px solid var(--button--color-500)',
-      boxShadow: '0',
-      hover: {
-        color: 'var(--button--color-600)',
-        background: 'var(--button--color-100)',
-        border: '1px solid var(--button--color-600)',
-        boxShadow: '0'
-      },
-      active: {
-        color: 'var(--button--color-700)',
-        background: 'var(--button--color-200)',
-        border: '1px solid var(--button--color-700)',
-        boxShadow: '0'
-      }
-    },
-    soft: {
-      color: 'var(--button--color-600)',
-      background: 'var(--button--color-100)',
-      border: '1px solid var(--button--color-100)',
-      boxShadow: '0',
-      hover: {
-        color: 'var(--button--color-600)',
-        background: 'var(--button--color-200)',
-        border: '1px solid var(--button--color-200)',
-        boxShadow: '0'
-      },
-      active: {
-        color: 'var(--button--color-700)',
-        background: 'var(--button--color-300)',
-        border: '1px solid var(--button--color-300)',
-        boxShadow: '0'
       }
     }
   },
@@ -100,6 +100,7 @@ const buttonStyles: Record<keyof ButtonProps, any> = {
   },
 
   color: (color: ButtonProps['color']) => `
+  --button--color-50:var(--pk-${color}-50);
   --button--color-100:var(--pk-${color}-100);
   --button--color-200:var(--pk-${color}-200);
   --button--color-300:var(--pk-${color}-300);
