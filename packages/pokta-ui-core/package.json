@@ -10,6 +10,7 @@
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.15"
+    "@fontsource/inter": "^5.0.15",
+    "svelte": "^4.2.2"
   }
 }
