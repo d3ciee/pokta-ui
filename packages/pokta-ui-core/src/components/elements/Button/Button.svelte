@@ -10,12 +10,13 @@
 </script>
 
 <script lang="ts">
+  import Spinner from '../Spinner';
   import type { PoktaUIColor } from '../../../types/';
   import generateButtonVars from './Button.styles';
 
   export let size: ButtonProps['size'] = 'md';
   export let loading: ButtonProps['loading'] = false;
-  export let disabled: ButtonProps['disabled'] = false;
+  export let disabled: ButtonProps['disabled'] = loading || false;
   export let rounded: ButtonProps['rounded'] = 'default';
   export let variant: ButtonProps['variant'] = 'fill';
   export let color: ButtonProps['color'] = 'emerald';
@@ -23,7 +24,14 @@
   $: styles = generateButtonVars({ size, rounded, variant, color });
 </script>
 
-<button {disabled} on:click style={styles} class={'button'}><slot /></button>
+<button {disabled} on:click style={styles} class={'button'}>
+  {#if loading}
+    <Spinner track size={16} />
+  {/if}
+  <span>
+    <slot />
+  </span>
+</button>
 
 <style>
   .button {
@@ -36,9 +44,13 @@
     transition: all var(--transition-time-blazingly-fast) ease-in-out;
     cursor: pointer;
 
+    gap: var(--pk-space-sm);
+
     height: var(--button--height);
     font-size: var(--button--font-size);
     padding-inline: var(--button--padding-inline);
+    /* line-height: var(--button--line-height); */
+
     border-radius: var(--button--border-radius);
 
     color: var(--button--color);
@@ -60,5 +72,12 @@
     background: var(--button--active--background);
     border: var(--button--active--border);
     box-shadow: var(--button--active--box-shadow);
+  }
+  .button:disabled {
+    color: var(--button--disabled--color);
+    background: var(--button--disabled--background);
+    border: var(--button--disabled--border);
+    box-shadow: var(--button--disabled--box-shadow);
+    cursor: not-allowed;
   }
 </style>
