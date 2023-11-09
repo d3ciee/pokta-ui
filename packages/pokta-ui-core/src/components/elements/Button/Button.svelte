@@ -12,7 +12,7 @@
 <script lang="ts">
   import Spinner from '../Spinner';
   import type { PoktaUIColor } from '../../../types/';
-  import generateButtonVars from './Button.styles';
+  import generateButtonStyles from './Button.styles';
 
   export let size: ButtonProps['size'] = 'md';
   export let loading: ButtonProps['loading'] = false;
@@ -21,7 +21,7 @@
   export let variant: ButtonProps['variant'] = 'fill';
   export let color: ButtonProps['color'] = 'emerald';
 
-  $: styles = generateButtonVars({ size, rounded, variant, color });
+  $: styles = generateButtonStyles({ size, rounded, variant, color });
 </script>
 
 <button {disabled} on:click style={styles} class={'button'}>
@@ -41,7 +41,6 @@
     justify-content: center;
     border-radius: var(--pk-border-radius-md);
     font-family: var(--pk-font-family);
-    transition: all var(--transition-time-blazingly-fast) ease-in-out;
     cursor: pointer;
 
     gap: var(--pk-space-sm);
